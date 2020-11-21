@@ -1,4 +1,19 @@
-
+/* Academic Honesty Certification
+* Written sources used: Introduction to Algorithms
+* (Include textbook(s), complete citations for web or other written sources.
+* Note that you are not allowed to use the web for this assignment.
+* Write "none" if no sources used.)
+* 
+*
+*
+* Help obtained:
+* (Include names of anyone other than the instructor.)
+* None
+*
+*
+* My written or typed signature below confirms that the above list * of sources is complete. 
+* Signature: Chase Snodgrass
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -66,9 +81,9 @@ void countSort(int input[], int length, int radix){
     for(int i = 0; i < length; i++){
         //Determines the digit of the value and gets corresponding digit_t
         currentVal = input[i];
-        printf("Current Val: %d", currentVal);
+        // printf("Current Val: %d", currentVal);
         int currentDigit = (currentVal % radix)/(radix/10);
-        printf("Current Digit: %d\n", currentDigit);
+        // printf("Current Digit: %d\n", currentDigit);
         digit_t * currentWorkingDigit = workingArray[currentDigit];
         currentWorkingDigit->count++;
         //initialize the new node_t for the value
@@ -103,8 +118,8 @@ void countSort(int input[], int length, int radix){
             currentIndex++;
         }
     }
-    printf("Radix %d\n", radix);
-    printArray(input, length);
+    // printf("Radix %d\n", radix);
+    // printArray(input, length);
 
     //Frees malloced memory
     for(int i = 0; i < 10; i++){
@@ -139,10 +154,10 @@ void countSort(int input[], int length, int radix){
 */
 void printArray(int input[], int length){
     printf("[");
-    for(int i = 0; i < length; i++){
+    for(int i = 0; i < length-1; i++){
         printf("%d,", input[i]);
     }
-    printf("]\n");
+    printf("%d]\n", input[length-1]);
 }
 
 /**
